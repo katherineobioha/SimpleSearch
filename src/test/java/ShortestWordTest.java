@@ -14,7 +14,7 @@ public class ShortestWordTest {
 	@BeforeTest
 	public void setup()
 	{
-		System.out.println("Hi");
+		System.out.println("Shortest Word Test");
 		i=0;
 		j=0;
 	}
