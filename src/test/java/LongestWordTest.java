@@ -45,7 +45,7 @@ public class LongestWordTest {
 		System.out.printf("%n");
 		Search search = new Search();	
 		search.findLongestWord(searchword);
-		Assert.assertTrue(true, "Expected: "+ "NoWordException");
+		Assert.assertFalse(true, "Expected: "+ "NoWordException");
 	}
 	
 	@Test(dataProvider="negativescenario2",expectedExceptions= IllegalArgumentException.class, priority=26)
