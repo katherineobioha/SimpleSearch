@@ -8,7 +8,7 @@ public class Search {
 	
 	
 	
-	public String findLongestWord(String word)
+	public void findLongestWord(String word)
 	{ 
 		length=0;
 			if(word.trim().length()==length)
@@ -30,7 +30,32 @@ public class Search {
 			
 		}
 		
-			return " ";
+	}
+	
+	/*
+	 *  Assuming longest word is of length 100
+	 */
+	public void findShortestWord(String word)
+	{ 
+		length=100;
+			if(word.trim().length()==0)
+			{
+				throw new NoWordException("Invalid Input -  Please enter string as input ");
+			}
+			for(String s:Arrays.stream(word.split("\\s+")).toArray(String[]::new))
+			{
+				if(s.length() < length)
+				{
+					//System.out.println(s);
+					length = s.length();
+					words = s;
+				}
+				else if(s.length()==length)
+				{
+					words =words+ ", "+ s;
+				}
+			
+		}
 		
 	}
 	
