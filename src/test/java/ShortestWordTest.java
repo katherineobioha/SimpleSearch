@@ -28,8 +28,8 @@ public class ShortestWordTest {
 		search.findShortestWord(searchword);
 		System.out.println("ShortestWord: " + search.words + " - Length: " + search.length);
 		System.out.printf("%n");
-		new SoftAssert().assertEquals(search.words, correctans[i],"Expected: "+ correctans[i]);
-		new SoftAssert().assertEquals(search.words.length(), correctans[i].length());
+		Assert.assertEquals(search.words, correctans[i],"Expected: "+ correctans[i]);
+		Assert.assertEquals(search.words.length(), correctans[i].length());
 		i++;
 	}
 	
@@ -40,7 +40,7 @@ public class ShortestWordTest {
 		System.out.println("Search word is: " + null);
 		Search search = new Search();	
 		search.findShortestWord(searchword);
-		Assert.assertTrue(true, "Expected: NoWordException");
+		Assert.assertFalse(true, "Expected: NoWordException");
 	}
 	
 	@Test(dataProvider="negativescenario2",expectedExceptions= IllegalArgumentException.class, priority=26)
