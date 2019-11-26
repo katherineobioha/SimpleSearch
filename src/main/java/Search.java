@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import exceptions.NoWordException;
 
 public class Search {
 
@@ -6,10 +7,14 @@ public class Search {
 	static String words; //max word
 	
 	
-	public void findLongestWord(String word)
+	
+	public String findLongestWord(String word)
 	{ 
 		length=0;
-		try{
+			if(word.trim().length()==length)
+			{
+				throw new NoWordException("Invalid Input -  Please enter string as input - ");
+			}
 			for(String s:Arrays.stream(word.split("\\s+")).toArray(String[]::new))
 			{
 				if(s.length() > length)
@@ -18,18 +23,21 @@ public class Search {
 					length = s.length();
 					words = s;
 				}
-			}
+				else if(s.length()==length)
+				{
+					words =words+ ", "+ s;
+				}
+			
 		}
-			catch(Exception e)
-			{
-				
-			}
+		
+			return " ";
+		
 	}
 	
 	public static void main(String[]args)
 	{
 		Search search = new Search();
-		search.findLongestWord("Somewhere over the rainbow");
-		System.out.println(words);
+		search.findLongestWord(" ");
+		//System.out.println(words);
 	}
 }
