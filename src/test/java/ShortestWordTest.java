@@ -14,7 +14,6 @@ public class ShortestWordTest {
 	@BeforeTest
 	public void setup()
 	{
-		System.out.println("Shortest Word Test");
 		i=0;
 		j=0;
 	}
@@ -22,7 +21,8 @@ public class ShortestWordTest {
 	
 	@Test(dataProvider="positivescenario", priority=0)
 	public void positiveLength(String searchword)
-	{	System.out.println("Search word is: " + searchword);
+	{	System.out.println("*****************Shortest Word Test****************");
+		System.out.println("Search word is: " + searchword);
 		String[]correctans={"the", "bank", "take", "I"};
 		Search search = new Search();
 		search.findShortestWord(searchword);

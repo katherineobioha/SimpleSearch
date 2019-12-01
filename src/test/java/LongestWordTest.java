@@ -17,7 +17,7 @@ public class LongestWordTest {
 	@BeforeTest
 	public void setup()
 	{
-		System.out.println("Running Test");
+		System.out.println("*****************Running Test****************");
 		i=0;
 		j=0;
 	}
@@ -26,6 +26,7 @@ public class LongestWordTest {
 	@Test(dataProvider="positivescenario", priority=0)
 	public void positiveLength(String searchword)
 	{	
+		System.out.println("*****************Longest Word Test****************");
 		System.out.println("Search word is: " + searchword);
 		String[]correctans={"somewhere", "bank", "heavy", "I"};
 		Search search = new Search();
