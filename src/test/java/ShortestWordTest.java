@@ -19,6 +19,11 @@ public class ShortestWordTest {
 	}
 	
 	
+	/**
+	 * 
+	 * @param searchword
+	 * Positive scenario testcase
+	 */
 	@Test(dataProvider="positivescenario", priority=0)
 	public void positiveLength(String searchword)
 	{	System.out.println("*****************Shortest Word Test****************");
@@ -33,7 +38,11 @@ public class ShortestWordTest {
 		i++;
 	}
 	
-	
+	/**
+	 * 
+	 * @param searchword
+	 * When input or search word is empty.
+	 */
 	@Test(dataProvider="negativescenario", expectedExceptions=NoWordException.class, priority=26)
 	public void zerowords(String searchword)
 	{
@@ -43,6 +52,11 @@ public class ShortestWordTest {
 		Assert.assertFalse(true, "Expected: NoWordException");
 	}
 	
+	/**
+	 * 
+	 * @param searchWord
+	 * When input or search word is not a string
+	 */
 	@Test(dataProvider="negativescenario2",expectedExceptions= IllegalArgumentException.class, priority=26)
 	public void illegalinput(String searchWord)
 	{
@@ -51,6 +65,11 @@ public class ShortestWordTest {
 		search.findShortestWord(searchWord);
 	}
 	
+	/**
+	 * 
+	 * @param searchWord
+	 * When input or search word have multiple shortest word with the same length
+	 */
 	@Test(dataProvider="multipleword" , priority=1)
 	public void multipleWords(String searchWord)
 	{
